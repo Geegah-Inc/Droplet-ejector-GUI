@@ -60,19 +60,16 @@ Python libraries for image generation, visualization, and analysis: matplotlib
 sudo apt-get install python3-matplotlib
 ```
 
-# Image acquisition and processing scripts
-The following scripts all allow for data acquisition using the Opal Kelly Imager. Each acquisition script has a section that allows users to load the raw data to generate images and compute different acoustic parameters.
+#Getting started: Clone the repository
 
-1. **Geegah_RP2040_Liveimaging.py**: Acquisition of N number of frames with an option to visualize them in real-time for the entire 128 x 128 pixels. This operates at a fixed frequency and echo acquisition timing.
-2.  **Geegah_RP2040_Liveimaging_withNoEcho.py**: Acquisition of N number of frames with an option to visualize them in real-time for the entire 128 x 128 pixels. This operates at a fixed frequency and echo acquisition timing. This also includes acquiring baseline acquisition at a later time when the echo dies off which can be used to calculate the true signal change of the samples yielding more accurate Acoustic Impedance.
-3. **Geegah_RP2040_FrequencySweep.py**: Acquisition of images at a range of frequencies (1.5 - 2.0 GHz, with a step as low as 0.01 MHz). Allows capturing N frames at a fixed acquisition echo timing.
+```bash
+git clone git@github.com:Geegah-Inc/Geegah-RP2040.git
+```
 
+# Script: acquisition_backend.py
+Responsible for initializing the ultrasonic sensor settings, acquiring frames of data, processing these frames, and providing methods for calibration and real-time data acquisition. This will be directly used by the ***frontend_run_GUI.py***. 
 
-# Helper libraries
-These consist of classes or functions that support the acquisition and processing of scripts. These do not have to be run individually.
-
-1. **geegah_hp.py** Helper functions for image acquisition and post-processing
-
+1. **create_unique_directory(base_path)**: 
 
 # Getting started: 
 
@@ -80,3 +77,9 @@ These consist of classes or functions that support the acquisition and processin
 ```bash
 git clone git@github.com:Geegah-Inc/Geegah-RP2040.git
 ```
+
+**Running the GUI manually**
+```bash
+python3 frontend_run_GUI.py
+```
+

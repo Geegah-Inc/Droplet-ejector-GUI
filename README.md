@@ -83,3 +83,7 @@ git clone git@github.com:Geegah-Inc/Geegah-RP2040.git
 python3 frontend_run_GUI.py
 ```
 
+
+
+**Snapshot of the GUI on RPi4**
+![screenshot](GUI_RPI.png)
